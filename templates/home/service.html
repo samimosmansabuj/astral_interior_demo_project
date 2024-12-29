@@ -1,0 +1,18 @@
+{% load static %}
+<!-- Services Section -->
+<div id="services">
+    <div class="container">
+      <div class="col-md-10 col-md-offset-1 section-title text-center">
+        <h2>Our Services</h2>
+        <hr>
+      </div>
+      <div class="row">
+        {% for service in service %}
+        <div class="col-xs-12 col-sm-4 service"> <img src="{{service.picture.url}}" class="img-responsive" alt="Project Title" style="height: 200px; object-fit: cover;">
+          <h3>{{service.title}}</h3>
+          <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam. Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend.</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>

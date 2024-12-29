@@ -1,0 +1,26 @@
+{% load static %}
+<!-- Team Section -->
+<div id="team" class="text-center">
+    <div class="overlay">
+      <div class="container">
+        <div class="col-md-8 col-md-offset-2 section-title">
+          <h2>Meet the Team</h2>
+          <hr>
+        </div>
+        <div id="row">
+
+          {% for team in team %}
+          <div class="col-md-3 col-sm-6 team">
+            <div class="thumbnail"> <img src="{{team.photo.url}}" alt="{{team.name}}" class="team-img">
+              <div class="caption">
+                <h3>{{team.name}}</h3>
+                <p>{{team.designation}}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,40 @@
+{% load static %}
+<!-- Portfolio Section -->
+<div id="portfolio">
+    <div class="container">
+      <div class="section-title text-center center">
+        <h2>Projects</h2>
+        <hr>
+      </div>
+      <div class="categories">
+        <ul class="cat">
+          <li>
+            <ol class="type">
+              <li><a href="#" data-filter="*" class="active">All Projects</a></li>
+              <li><a href="#" data-filter=".residential">Residential</a></li>
+              <li><a href="#" data-filter=".office">Office</a></li>
+              <li><a href="#" data-filter=".commercial">Commercial</a></li>
+            </ol>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+      <div class="row">
+        <div class="portfolio-items">
+
+          {% for project in project %}
+          <div class="col-sm-6 col-md-4 col-lg-4 residential">
+            <div class="portfolio-item">
+              <div class="hover-bg"> <a href="{{project.picture.url}}" title="{{project.details}}" data-lightbox-gallery="gallery1">
+                <div class="hover-text">
+                  <h4>{{project.title}}</h4>
+                </div>
+                <img src="{{project.picture.url}}" class="img-responsive" alt="{{project.title}}"> </a> </div>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+  </div>

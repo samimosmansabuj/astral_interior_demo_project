@@ -1,0 +1,417 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {{company_information.name}}{% if company_information.title %} - {{company_information.title}}{% endif %}
+    </title>
+    <link rel="stylesheet" type="text/css"  href="{% static 'css/style2.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Lightbox2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+
+    
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand nav-link" href="#header">Astral Interior</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#project">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="header">
+        <header id="header">
+            <div class="intro"
+                style="background: url({{company_information.cover.url}}) no-repeat center center; background-size: cover;">
+                <div class="overlay">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center justify-content-center text-center">
+                            <div class="intro-text">
+                                <h1><strong>{{company_information.name}}</strong> Design Studio</h1>
+                                <p>{{company_information.title}}</p>
+                                <a href="" class="btn btn-custom btn-lg page-scroll">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div id="about" class="py-5">
+            <div class="container">
+                <!-- Section Title -->
+                <div class="section-title text-center">
+                    <h2 class="mb-4">Our Story</h2>
+                    <hr class="w-25 mx-auto">
+                </div>
+                <!-- Content -->
+                <div class="row align-items-center">
+                    <!-- Image Section -->
+                    <div class="col-md-6 mb-4 mb-md-0 text-center">
+                        <img src="{% static 'img/about.jpg' %}" class="img-fluid rounded" alt="About us">
+                    </div>
+                    <!-- Text Section -->
+                    <div class="col-md-6">
+                        <div class="about-text">
+                            <h3 class="mb-3">The Studio</h3>
+                            <p class="mb-4">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare
+                                diam. Sed
+                                commodo
+                                nibh
+                                ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo
+                                nibh.
+                            </p>
+                            <h3 class="mb-3">How We Work</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare
+                                diam. Sed
+                                commodo
+                                nibh
+                                ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services">
+        <div id="services" class="py-5">
+            <div class="container">
+                <!-- Section Title -->
+                <div class="section-title text-center mb-5">
+                    <h2>Our Services</h2>
+                    <hr class="w-25 mx-auto mb-3">
+                </div>
+                <!-- Service Items -->
+                <div class="row g-4">
+
+                    {% for service in service %}
+                    <!-- Service 1 -->
+                    <div class="col-12 col-md-4 text-center">
+                        <div class="service shadow-sm rounded p-3 h-100">
+                            <img src="{{service.picture.url}}" class="img-fluid rounded mb-3" alt="Residential Design"
+                                style="height: 200px; object-fit: cover; width: 300px;">
+                            <h3 class="mb-3">{{service.title}}</h3>
+                            <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque
+                                natoque etiam.
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Portfolio Section -->
+    <section id="project">
+        <div id="project" class="py-5" style="background: #f9f9f9 !important;">
+            <div class="container">
+                <!-- Section Title -->
+                <div class="section-title text-center mb-5">
+                    <h2>Projects</h2>
+                    <hr class="w-25 mx-auto mb-3">
+                </div>
+
+                <!-- Categories Filter -->
+                <div class="categories mb-5">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a data-filter="*" class="btn btn-outline-primary active">All Projects</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a data-filter=".residential" class="btn btn-outline-primary">Residential</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a data-filter=".office" class="btn btn-outline-primary">Office</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a data-filter=".commercial" class="btn btn-outline-primary">Commercial</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Portfolio Items -->
+                <div class="row portfolio-items">
+
+                    {% for project in project %}
+                    <!-- Residential Project 1 -->
+                    <div class="col-sm-6 col-md-4 col-lg-3 residential">
+                        <div class="portfolio-item">
+                            <div class="hover-bg">
+                                <a href="{{project.picture.url}}" title="{{project.details}}"
+                                    data-lightbox-gallery="gallery1">
+                                    <div class="hover-text">
+                                        <h4>{{project.title}}</h4>
+                                    </div>
+                                    <img src="{{project.picture.url}}" class="img-fluid rounded shadow"
+                                        alt="{{project.title}}">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Team Section -->
+    <section id="team">
+        <div id="team" class="text-center py-5" style="background: url({% static 'img/intro-bg.jpg' %})no-repeat center center/cover;">
+            <div class="overlay">
+                <div class="container">
+                    <!-- Section Title -->
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 section-title">
+                            <h2 style="color: #ffffff;">Meet the Team</h2>
+                            <hr class="w-25 mx-auto mb-4" style="border: 2px solid #ffffff;">
+                        </div>
+                    </div>
+
+                    <!-- Team Members -->
+                    <div class="row">
+
+                        {% for team in team %}
+                        <!-- Team Member 1 -->
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="card border-0">
+                                <img src="{{team.photo.url}}" alt="{{team.name}}" class="card-img-top team-img">
+                                <div class="card-body">
+                                    <h5 class="card-title team-text">{{team.name}}</h5>
+                                    <p class="card-text text-muted team-text">{{team.designation}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-pedding">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>Contact Us</h2>
+                <hr class="w-25 mx-auto">
+            </div>
+            <div class="row">
+                <!-- Contact Info -->
+                <div class="col-md-4 mb-4">
+                    <h3 class="text-primary">Contact Info</h3>
+                    <!-- Address -->
+                    <div class="d-flex align-items-start mb-3">
+                        <i class="bi bi-geo-alt-fill text-danger me-3 fs-4"></i>
+                        <div>
+                            <h5 class="mb-1">Address</h5>
+                            <p>{{company_information.address}}</p>
+                        </div>
+                    </div>
+                    <!-- Email -->
+                    <div class="d-flex align-items-start mb-3">
+                        <i class="bi bi-envelope-fill text-success me-3 fs-4"></i>
+                        <div>
+                            <h5 class="mb-1">Email</h5>
+                            <p class="mb-0">
+                                <a href="mailto:{{company_information.email}}"
+                                    class="text-decoration-none text-dark">{{company_information.email}}</a>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Phone -->
+                    <div class="d-flex align-items-start">
+                        <i class="bi bi-telephone-fill text-primary me-3 fs-4"></i>
+                        <div>
+                            <h5 class="mb-1">Phone</h5>
+                            <p class="mb-0">
+                                <a href="tel:{{company_information.phone}}" class="text-decoration-none text-dark">{{company_information.phone}}</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="col-md-8">
+                    <h3>Leave us a message</h3>
+                    <form id="contactForm" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" id="name" class="form-control" placeholder="Name" required>
+                                <div class="invalid-feedback">Please enter your name.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" id="email" class="form-control" placeholder="Email" required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+                        </div>
+                        <div class="my-3">
+                            <textarea id="message" class="form-control" rows="4" placeholder="Message"
+                                required></textarea>
+                            <div class="invalid-feedback">Please enter a message.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="py-4 bg-dark text-white">
+        <div class="container text-center">
+            <div class="mb-3">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item">
+                        <a href="#" class="text-white">
+                            <i class="bi bi-facebook me-2"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="text-white">
+                            <i class="bi bi-twitter me-2"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="text-white">
+                            <i class="bi bi-google me-2"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="text-white">
+                            <i class="bi bi-pinterest me-2"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="text-white">
+                            <i class="bi bi-youtube me-2"></i>
+                        </a>
+                    </li>
+                </ul>
+
+
+            </div>
+            <p class="mb-0">&copy; 2025 {{company_information.name}}. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Lightbox2 JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const navLinks = document.querySelectorAll(".nav-link");
+
+            // Smooth scroll to section
+            navLinks.forEach(link => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault(); // Prevent default anchor behavior
+                    const targetId = link.getAttribute("href").slice(1); // Get the ID
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        // Scroll to the target section
+                        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+
+                        // Update active class
+                        navLinks.forEach(nav => nav.classList.remove("active"));
+                        link.classList.add("active");
+
+                        // Update URL without showing #
+                        history.pushState(null, null, `/${targetId}`);
+                    }
+                });
+            });
+
+            // Highlight the navbar link while scrolling
+            const sections = document.querySelectorAll("section");
+            window.addEventListener("scroll", () => {
+                let currentSection = "";
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 50) {
+                        currentSection = section.getAttribute("id");
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href").slice(1) === currentSection) {
+                        link.classList.add("active");
+                    }
+                });
+            });
+        });
+
+    </script>
+
+
+</body>
+
+</html>

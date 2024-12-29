@@ -1,0 +1,261 @@
+<style>body,
+html {
+    font-family: 'Roboto', sans-serif;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    /* color: #777; */
+    font-weight: 300;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#header .intro {
+    height: 100vh;
+    /* Full viewport height */
+    position: relative;
+}
+
+#header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Transparent overlay */
+}
+
+#header .intro-text h1 {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#header .intro-text p {
+    color: #ddd;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn-custom {
+    background-color: #ff5722;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #e64a19;
+    color: #fff;
+}
+
+
+
+
+
+
+/* Navbar Styling */
+.navbar {
+    margin: 20px 50px;
+    background-color: #00000069;
+    /* Transparent navbar */
+    transition: background-color 0.3s ease-in-out;
+    /* Smooth transition on scroll */
+    z-index: 1030;
+    /* Ensure it stays above other elements */
+}
+
+.navbar-dark .navbar-brand,
+.navbar-dark .nav-link {
+    color: #fff;
+    /* White text for navbar items */
+}
+
+.navbar-dark .nav-link:hover,
+.navbar-dark .navbar-brand:hover {
+    color: #ffd700;
+    /* Highlight color for hover */
+}
+
+/* Change Navbar Background on Scroll */
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent black */
+    backdrop-filter: blur(5px);
+    /* Optional glass effect */
+}
+
+/* Header Styling */
+#header .intro {
+    height: 100vh;
+    /* Full viewport height */
+    position: relative;
+}
+
+#header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Transparent overlay for contrast */
+}
+
+#header .intro-text h1 {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#header .btn-custom {
+    background-color: #ffd700;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px 0 12px 0;
+}
+
+#header .btn-custom:hover {
+    background-color: #e6c200;
+}
+
+
+
+
+
+
+
+/* About settion  */
+#about {
+    background-color: #f9f9f9;
+    /* Light background */
+}
+
+#about img {
+    border-radius: 100px 0px !important;
+    box-shadow: -15px 0 #a7c44c;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.section-title hr {
+    border: 2px solid #007bff;
+}
+
+.about-text h3 {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+
+
+/* Serice settion  */
+#services {
+    background-color: #ffffff;
+    /* Light background for contrast */
+}
+
+#services h2 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+#services hr {
+    border: 2px solid #007bff;
+}
+
+.service img {
+    border-radius: 50px 0px !important;
+    box-shadow: -15px 0 #a7c44c;
+}
+
+.service h3 {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.service p {
+    color: #555;
+    line-height: 1.6;
+}
+
+
+
+.hover-bg .hover-text {
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    color: #333;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 30% 0 0 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    border-radius: 0 50px 0 50px;
+}
+
+.hover-bg {
+    position: relative;
+    overflow: hidden;
+    margin: 15px 0px;
+}
+
+.hover-bg:hover .hover-text {
+    opacity: 1;
+}
+
+.hover-bg img {
+    border-radius: 0 50px 0 50px !important;
+}
+
+
+
+.team-img {
+    border-radius: 80px 0px !important;
+    box-shadow: 15px 0 #0000005c;
+}
+
+.team-text {
+    color: white;
+    font-weight: bold;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0) !important;
+}
+
+
+
+.nav-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.nav-link.active {
+    color: #ffc107 !important;
+    /* Highlighted color */
+    font-weight: bold;
+}
+
+
+.contact-pedding {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+}
+
+</style>
